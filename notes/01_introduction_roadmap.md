@@ -53,3 +53,10 @@ check https://freeapi.app/ (Hitesh's website)
 - Frameworks 
 	- NextJS, Gatsby, Remix
 	- NextJs allows both frontend and backend
+
+
+
+
+react (core library)
+and
+react-dom (website) or react-native (mobile)

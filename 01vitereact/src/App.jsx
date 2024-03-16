@@ -1,9 +1,12 @@
-
+import MyApp from "./myApp"
 
 function App() {
     return (
-    <h1> Chai aur React with Vite </h1>
-  )
+        <>
+            <MyApp />
+            <h1> this is a h1 tag </h1>
+        </>
+    )
 }
 
 export default App

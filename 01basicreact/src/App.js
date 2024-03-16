@@ -1,9 +1,11 @@
+import MyApp from "./MyApp";
 
 function App() {
   return (
-    <div className="App">
-      <h1> Chai aur React </h1>
-    </div>
+      <>
+          <MyApp />
+          <h1> hello from react </h1>
+      </>
   );
 }
 

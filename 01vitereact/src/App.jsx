@@ -1,10 +1,11 @@
-import MyApp from "./myApp"
+import MyApp from "./myApp";
 
 function App() {
+    const userName = "Mr. Robot";
     return (
         <>
             <MyApp />
-            <h1> this is a h1 tag </h1>
+            <h1> hello friend, {userName} </h1>
         </>
     )
 }

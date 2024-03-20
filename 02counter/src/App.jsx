@@ -8,9 +8,17 @@ function App() {
 
     const addValue = () => {
         if (counter < 20) {
-            counter += 1;
-            setCounter(counter)
-            console.log("clicked and increased the counter value ", counter);
+            // counter += 1;
+            // setCounter(counter)
+            setCounter(prevCounter => {
+                console.log(`Updating counter ${prevCounter}`)
+                return prevCounter + 1
+            });
+            setCounter(prevCounter => prevCounter + 1);
+            setCounter(prevCounter => prevCounter + 1);
+            setCounter(prevCounter => prevCounter + 1);
+            setCounter(prevCounter => prevCounter + 1);
+
         }
     }
 

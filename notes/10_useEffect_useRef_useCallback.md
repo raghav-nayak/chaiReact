@@ -152,3 +152,7 @@ function App() {
 
 export default App
 ```
+
+<br>
+
+![Password Generator](./images/password_generator.png)

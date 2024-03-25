@@ -1,6 +1,6 @@
-import React from 'react'
-import { Footer, Header } from "./components"
+import React from 'react';
 import { Outlet } from "react-router-dom";
+import { Footer, Header } from "./components";
 
 function Layout() {
     return (
@@ -12,4 +12,4 @@ function Layout() {
     )
 }
 
-export default Layout
+export default Layout;

@@ -37,3 +37,96 @@ There are other options available
 <hr>
 
 read about [useContext](https://react.dev/reference/react/useContext)
+
+
+
+We need to create two file UserContext.js and UserContextProvider.jsx
+
+children is a generic name used for props. 
+
+
+<hr>
+
+`components/Login.jsx`
+```js
+import React, { useContext, useState } from 'react';
+import UserContext from "../context/UserContext";
+
+function Login() {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const { setUser } = useContext(UserContext);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setUser({username, password});
+    }
+
+    return (
+        <>
+            <h2> Login </h2>
+            <input
+                type="text"
+                placeholder="username"
+                onChange={ (e) => setUsername(e.target.value)}
+            />
+            {" "}
+            <input
+                type="text"
+                placeholder="password"
+                onChange={ (e) => setPassword(e.target.value)}
+            />
+            <button onClick={handleSubmit}> Submit </button>
+        </>
+    )
+}
+
+export default Login
+```
+
+
+`components/Profile.jsx`
+```js
+import React, { useContext } from "react";
+import UserContext from "../context/UserContext";
+
+function Profile() {
+    const { user } = useContext(UserContext);
+
+    if (!user) return <div> Please login!! </div>
+    return <div> Welcome {user.username} </div>
+}
+
+export default Profile;
+```
+
+
+`context/UserContext.js`
+```js
+import React from "react";
+
+const UserContext = React.createContext();
+
+export default UserContext;
+```
+
+
+`context/UserContextProvider.jsx`
+```js
+import React from "react";
+import UserContext from "./UserContext";
+
+const UserContextProvider = ({ children }) => {
+    const [user, setUser] = React.useState(null);
+    return (
+        <>
+            <UserContext.Provider value={{user, setUser}}>
+                {children}
+            </UserContext.Provider>
+        </>
+    )
+}
+
+export default UserContextProvider;
+```

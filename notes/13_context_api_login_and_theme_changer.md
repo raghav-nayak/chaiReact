@@ -267,3 +267,6 @@ export default {
   plugins: [],
 }
 ```
+
+
+**Note:** The method name given in the provider and App.jsx should match. It is kind of overloading.

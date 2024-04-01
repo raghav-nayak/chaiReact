@@ -11,18 +11,17 @@ function App() {
     }
 
     const updateTodo = (id, todo) => { 
-        setTodos((prev) => {
-            prev.map((prevTodo) => {
-                prevTodo.id === id ? todo : prevTodo;
-            }
-            )
-        }
-        )
+        setTodos((prev) => prev.map((prevTodo) => prevTodo.id === id ? todo : prevTodo));
     }
 
-    const deleteTodo = (id) => { }
+    const deleteTodo = (id) => { 
+        // remove id matching todo and keep others
+        setTodos((prev) => prev.filter((todo) => todo.id != id))
+    }
 
-    const toggleComplete = (id) => { }
+    const toggleComplete = (id) => { 
+        setTodos((prev) => prev.map((prevTodo) => prevTodo.id === id ? {...prevTodo, isCompleted: !prevTodo.isCompleted} : prevTodo))
+    }
 
     return (
         <TodoProvider value={{todos, addTodo, updateTodo, deleteTodo, toggleComplete}}>

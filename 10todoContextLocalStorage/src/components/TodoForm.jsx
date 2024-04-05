@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTodo } from '../contexts';
 
 function TodoForm() {
-    const [todo, setTod] = useState("");
+    const [todo, setTodo] = useState("");
     const { addTodo } = useTodo();
 
     const add = (e) => {
